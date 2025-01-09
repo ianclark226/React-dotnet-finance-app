@@ -1,6 +1,5 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { searchCompanies } from '../../../api'
-import Navbar from '../../navbar/Navbar'
 import Search from '../../search/Search'
 import ListPorfolio from '../../portfolio/list-portfolio/ListPorfolio'
 import CardList from '../../cardlist/CardList'

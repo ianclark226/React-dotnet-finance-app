@@ -324,7 +324,7 @@ export interface Dividend {
   declarationDate: string;
 }
 
-export interface CompanyCompData {
+export interface CompanyCompareableData {
   symbol: string;
   peersList: string[];
 }

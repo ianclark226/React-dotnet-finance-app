@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CompanyKeyMetrics } from '../../company';
 import { useOutletContext } from 'react-router';
 import { getKeyMetrics } from '../../api';

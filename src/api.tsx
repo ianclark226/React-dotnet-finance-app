@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile } from "./company";
+import { CompanyBalanceSheet, CompanyCashFlow, CompanyCompareableData, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanyTenK } from "./company";
 
 
 interface SearchResponse {
@@ -72,4 +72,26 @@ export const searchCompanies = async (query: string) => {
       console.log("error message: ", error.message);
     }
   };
+  
+  // export const getCompData = async (query: string) => {
+  //   try {
+  //     const data = await axios.get<CompanyCompareableData[]>(
+  //       `https://financialmodelingprep.com/api/v4/stock_peers?symbol=${query}&apikey=${apiKey}`
+  //     );
+  //     return data;
+  //   } catch (error: any) {
+  //     console.log("error message: ", error.message);
+  //   }
+  // };
+
+  // export const getTenK = async (query: string) => {
+  //   try {
+  //     const data = await axios.get<CompanyTenK[]>(
+  //       `https://financialmodelingprep.com/api/v3/sec_filings/${query}?type=10-k&page=0@apikey=${apiKey}`
+  //     );
+  //     return data;
+  //   } catch (error: any) {
+  //     console.log("error message: ", error.message);
+  //   }
+  // };
   
