@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyCompareableData, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanyTenK } from "./company";
+import { CompanyBalanceSheet, CompanyCashFlow, CompanyCompareableData, CompanyHistoricalDividend, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanyTenK } from "./company";
 
 
 interface SearchResponse {
@@ -73,6 +73,8 @@ export const searchCompanies = async (query: string) => {
     }
   };
   
+// These two api route seem to throw errors. Comp = 403 Forbidden and TenK = 401 Unauthorized. Maybe you have to have a paid version of the api. Either way, the two exports and any files related to them are commented out.
+
   // export const getCompData = async (query: string) => {
   //   try {
   //     const data = await axios.get<CompanyCompareableData[]>(
@@ -94,4 +96,15 @@ export const searchCompanies = async (query: string) => {
   //     console.log("error message: ", error.message);
   //   }
   // };
+
+  export const getHistoricalDividend = async (query: string) => {
+    try {
+      const data = await axios.get<CompanyHistoricalDividend>(
+        `https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/${query}?apikey=${apiKey}`
+      );
+      return data;
+    } catch (error: any) {
+      console.log("error message: ", error.message);
+    }
+  };
   
