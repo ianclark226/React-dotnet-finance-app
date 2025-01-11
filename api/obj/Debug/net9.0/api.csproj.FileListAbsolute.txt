@@ -160,3 +160,5 @@ C:\Users\iancl\code\React-dotnet-finance-app\api\bin\Debug\net9.0\Microsoft.AspN
 C:\Users\iancl\code\React-dotnet-finance-app\api\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\iancl\code\React-dotnet-finance-app\api\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\iancl\code\React-dotnet-finance-app\api\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\iancl\code\React-dotnet-finance-app\api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\iancl\code\React-dotnet-finance-app\api\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
