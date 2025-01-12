@@ -87,6 +87,9 @@ builder.Services.AddAuthentication(options => {
 builder.Services.AddScoped<IStockRepo, CreateStockRepo>();
 builder.Services.AddScoped<ICommentRepo, CommentRepo>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IPortfolioRepo, PortfolioRepo>();
+builder.Services.AddScoped<IFMPService, FMPService>();
+builder.Services.AddHttpClient<IFMPService, FMPService>();
 
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.ConfigureWarnings(warnings =>
@@ -101,6 +104,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+
+app.UseCors(x => x
+.AllowAnyMethod()
+.AllowAnyHeader()
+.AllowCredentials()
+
+//.WithOrigins("https://localhost:44351))
+.SetIsOriginAllowed(origin => true));
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
