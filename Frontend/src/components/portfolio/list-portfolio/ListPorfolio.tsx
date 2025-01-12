@@ -1,8 +1,9 @@
 import { SyntheticEvent } from 'react'
 import CardPortfolio from '../card-portfolio/CardPortfolio'
+import { PortfolioGet } from '../../../models/Portfolio'
 
 interface Props {
-    portfolioValues: string[]
+    portfolioValues: PortfolioGet[]
     onPortfolioDelete: (e: SyntheticEvent) => void
 }
 
@@ -31,8 +32,7 @@ const ListPorfolio = ({portfolioValues, onPortfolioDelete}: Props) => {
         </>
       </div>
     </section>
-
-  )
-}
+  );
+};
 
 export default ListPorfolio

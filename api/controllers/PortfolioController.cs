@@ -39,16 +39,21 @@ namespace api.controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> AddPortfolio(string symbol) {
+        public async Task<IActionResult> AddPortfolio(string symbol)
+        {
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username);
             var stock = await _stockRepo.GetBySymbolAsync(symbol);
 
-            if(stock == null) {
+            if (stock == null)
+            {
                 stock = await _fmpService.FindStockBySymbolAsync(symbol);
-                if(stock == null) {
-                    return BadRequest("This stock does not exist");
-                } else {
+                if (stock == null)
+                {
+                    return BadRequest("Stock does not exists");
+                }
+                else
+                {
                     await _stockRepo.CreateAsync(stock);
                 }
             }
